@@ -19,7 +19,7 @@ body:
     attributes:
       label: 할 일 목록 (To-do List)
       description: 진행해야 할 세부 작업을 체크박스 형태로 나열해주세요.
-      value: |
+      value: 
         - [ ] 개발
         - [ ] 테스트
         - [ ] 문서화
