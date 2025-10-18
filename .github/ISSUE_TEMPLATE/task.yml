@@ -5,13 +5,13 @@ labels: [task]
 assignees: []
 
 body:
-  - type: input
-    id: summary
+  - type: markdown
     attributes:
-      label: 작업 요약
-      placeholder: ex) 질문 추천 API 문서화
-    validations:
-      required: true
+      value: |
+        ## 🧱 작업 작성 가이드
+        제목은 아래 형식으로 입력해주세요:
+        - `[Task]: 질문 추천 API 문서화`
+        - `[Task]: 배포 파이프라인 환경 변수 정리`
 
   - type: textarea
     id: details
