@@ -1,5 +1,5 @@
 name: 🧩 Task
-description: Q-IT 개발, 테스트, 문서화 등 일반 작업을 기록합니다.
+description: Q-IT 개발/운영 작업 등록
 title: "[Task] "
 labels: [task]
 assignees: []
@@ -19,7 +19,7 @@ body:
     attributes:
       label: 할 일 목록 (To-do List)
       description: 진행해야 할 세부 작업을 체크박스 형태로 나열해주세요.
-      value: 
+      value: |
         - [ ] 개발
         - [ ] 테스트
         - [ ] 문서화
@@ -39,8 +39,7 @@ body:
   - type: input
     id: due_date
     attributes:
-      label: 예상 완료일
-      description: 마감일을 입력해주세요. (형식: YYYY-MM-DD)
+      label: 마감일
       placeholder: ex) 2025-10-25
 
   - type: textarea
