@@ -1,0 +1,48 @@
+name: 🧩 Task
+description: Q-IT 개발, 테스트, 문서화 등 일반 작업을 기록합니다.
+title: "[Task]: "
+labels: [task]
+assignees: []
+
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: 작업 요약
+      placeholder: ex) 질문 추천 API 문서화
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: 작업 내용
+      placeholder: ex) Spring REST Docs를 적용하여 /api/questions/recommend 엔드포인트 문서화
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: 작업 유형
+      options:
+        - 🧱 개발
+        - 🧪 테스트
+        - 📄 문서화
+        - 🔧 리팩토링
+        - 🚀 배포
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options:
+        - 🔥 High
+        - ⚡ Medium
+        - 🧊 Low
+
+  - type: input
+    id: due_date
+    attributes:
+      label: 예상 완료일
+      placeholder: ex) 2025-10-25
