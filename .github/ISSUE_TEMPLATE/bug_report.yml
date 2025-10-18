@@ -1,0 +1,61 @@
+name: 🐞 Bug Report
+description: Q-IT 서비스의 버그나 오류를 보고합니다.
+title: "[Bug]: "
+labels: [bug, needs-triage]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧠 버그 리포트 가이드
+        Q-IT에서 발생한 문제를 아래 양식에 따라 구체적으로 작성해주세요.
+        - **재현 가능한가요?** (언제, 어떤 조건에서 발생했는지)
+        - **예상 동작**과 **실제 동작**을 비교해주세요.
+
+  - type: input
+    id: summary
+    attributes:
+      label: 요약
+      placeholder: ex) AI 질문 생성 시 "서버 오류" 팝업이 표시됨
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 단계
+      placeholder: |
+        1. 질문 생성 페이지로 이동
+        2. "AI로 생성" 클릭
+        3. 에러 팝업 확인
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 예상 결과
+      placeholder: ex) 질문이 정상적으로 생성되어 목록에 추가되어야 함
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 결과
+      placeholder: ex) "서버 오류가 발생했습니다" 팝업이 표시됨
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: 환경 정보
+      placeholder: ex) Chrome 128 / macOS 14.0 / Q-IT v0.9.1
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 로그 또는 스크린샷
+      description: 문제를 이해하는 데 도움이 되는 자료를 첨부해주세요.
