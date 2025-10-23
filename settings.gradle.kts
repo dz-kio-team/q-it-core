@@ -1,1 +1,1 @@
-rootProject.name = "q-it"
+rootProject.name = "q-it-core"
