@@ -23,6 +23,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 }
 
 kotlin {
