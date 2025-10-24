@@ -24,6 +24,7 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 }
 
 kotlin {
