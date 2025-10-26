@@ -1,8 +1,13 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
 plugins {
     kotlin("jvm") version "1.9.25"
     kotlin("plugin.spring") version "1.9.25"
+    kotlin("plugin.jpa") version "1.9.25"
     id("org.springframework.boot") version "3.5.6" apply false
     id("io.spring.dependency-management") version "1.1.7"
+    id("java-library")
+    id("java")
 }
 
 group = "com.kio"
@@ -11,8 +16,15 @@ description = "q-it-core"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(17)
     }
+}
+
+tasks.jar {
+    enabled = true
+    archiveClassifier.set("") // 중복 방지
+    archiveVersion.set("${project.version}")
+    archiveBaseName.set("q-it-core")
 }
 
 repositories {
@@ -22,7 +34,7 @@ repositories {
 // Spring Boot Plugin 없이도 스프링 프레임워크의 의존성 관리를 사용할 수 있도록 설정
 dependencyManagement {
     imports {
-        mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+        mavenBom(SpringBootPlugin.BOM_COORDINATES)
     }
 }
 
@@ -48,4 +60,10 @@ kotlin {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+configurations {
+    compileOnly {
+        extendsFrom(configurations.annotationProcessor.get())
+    }
 }
