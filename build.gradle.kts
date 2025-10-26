@@ -7,10 +7,11 @@ plugins {
     id("org.springframework.boot") version "3.5.6" apply false
     id("io.spring.dependency-management") version "1.1.7"
     id("java-library")
+    id("maven-publish")
 }
 
-group = "com.kio"
-version = "0.0.1-SNAPSHOT"
+group = "com.kio.core"
+//version = "0.0.1-SNAPSHOT"    // JitPack은 Git 태그를 버전으로 사용하므로 별도 버전 설정 불필요
 description = "q-it-core"
 
 java {
@@ -71,4 +72,15 @@ allOpen {
     annotation("jakarta.persistence.Entity")
     annotation("jakarta.persistence.MappedSuperclass")
     annotation("jakarta.persistence.Embeddable")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            groupId = "${project.group}"
+            artifactId = "q-it-core"
+//            version = "${project.version}"
+            from(components["java"])
+        }
+    }
 }
