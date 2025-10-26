@@ -7,7 +7,6 @@ plugins {
     id("org.springframework.boot") version "3.5.6" apply false
     id("io.spring.dependency-management") version "1.1.7"
     id("java-library")
-    id("java")
 }
 
 group = "com.kio"
@@ -66,4 +65,10 @@ configurations {
     compileOnly {
         extendsFrom(configurations.annotationProcessor.get())
     }
+}
+
+allOpen {
+    annotation("jakarta.persistence.Entity")
+    annotation("jakarta.persistence.MappedSuperclass")
+    annotation("jakarta.persistence.Embeddable")
 }
