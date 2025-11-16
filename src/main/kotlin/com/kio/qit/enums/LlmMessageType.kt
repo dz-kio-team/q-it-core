@@ -6,9 +6,10 @@ enum class LlmMessageType(
     val type: String,
     val description: String
 ) {
-    SYSTEM("system", "시스템 메시지"),
-    USER("user", "사용자 메시지"),
-    ASSISTANT("assistant", "어시스턴트 메시지");
+    SYSTEM("system", "모델의 전체 행동 규칙을 정의하는 메시지 (예: 톤, 스타일, 역할, 제약 등)"),
+    USER("user", "사용자가 모델에게 요청하는 실제 메시지"),
+    ASSISTANT("assistant", "모델이 이전에 응답한 메시지 (대화 맥락 유지에 사용)"),
+    ;
 
     companion object {
         @JsonCreator

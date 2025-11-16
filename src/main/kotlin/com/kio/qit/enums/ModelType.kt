@@ -8,8 +8,8 @@ enum class ModelType(
     val type: String,
     val description: String
 ) {
-    GPT_4("gpt-4", "GPT-4 모델"),
-    OLLAMA("ollama", "Ollama 모델"),
+    GPT_4("gpt-4", "질문 생성에 사용되는 모델"),
+    OLLAMA("ollama", "질문 정제에 사용되는 모델"),
     ;
 
     companion object {
