@@ -1,4 +1,4 @@
-package com.kio.qit.enum
+package com.kio.qit.enums
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
