@@ -14,10 +14,12 @@ enum class InterviewType(
     ;
 
     companion object {
+        private val map: Map<String, InterviewType> = InterviewType.entries.associateBy { it.type }
+
         @JsonCreator
         @JvmStatic
         fun of(type: String): InterviewType {
-            return entries.firstOrNull { it.type == type }
+            return map[type]
                 ?: throw IllegalArgumentException("유효하지 않은 InterviewType 타입: $type")
         }
     }

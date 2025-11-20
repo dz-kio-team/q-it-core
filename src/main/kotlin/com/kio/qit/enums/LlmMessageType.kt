@@ -12,11 +12,13 @@ enum class LlmMessageType(
     ;
 
     companion object {
+        private val map: Map<String, LlmMessageType> = entries.associateBy { it.type }
+
         @JsonCreator
         @JvmStatic
         fun of(type: String): LlmMessageType {
-            return LlmMessageType.entries.firstOrNull { it.type == type }
-                ?: throw IllegalArgumentException("유효하지 않은 LlmMessageType 타입: $type")
+            return map[type]
+                ?: throw IllegalArgumentException("유효하지 않은 LlmMessageType 타입: $type. 지원하는 타입: ${map.keys.joinToString(", ")}")
         }
     }
 }
