@@ -18,24 +18,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice
 @RestControllerAdvice
 class GlobalExceptionHandler {
 
-    @ExceptionHandler(LlmException::class)
-    fun handleLlmException(ex: LlmException):
-            ResponseEntity<Map<String, Any?>> {
-        val response = mutableMapOf<String, Any?>(
-            "message" to (ex.message ?: "LLM 처리 중 오류가 발생했습니다"),
-            "errorCode" to ex.errorCode.name
-        )
-
-        // LLM 관련 추가 정보가 있으면 포함
-        ex.additionalInfo?.let { info ->
-            response["additionalInfo"] = info
-        }
-
-        return ResponseEntity
-            .status(HttpStatus.valueOf(ex.errorCode.code))
-            .body(response)
-    }
-
     @ExceptionHandler(BusinessLogicException::class)
     fun handleBusinessLogicException(ex: BusinessLogicException): ResponseEntity<Map<String, String>> {
         return ResponseEntity
