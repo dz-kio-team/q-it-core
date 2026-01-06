@@ -8,9 +8,9 @@ enum class QuestionGenerationType(
     val type: String,
     val description: String
 ) {
-    CUSTOM("custom question", "사용자 정의 질문"),
-    AI("AI generated question", "AI 생성 질문"),
-    EXISTING("existing question", "기존 질문")
+    CUSTOM("CUSTOM", "사용자 정의 질문"),
+    AI("AI", "AI 생성 질문"),
+    EXISTING("EXISTING", "기존 질문")
     ;
 
     companion object {
